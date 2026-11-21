@@ -20,6 +20,7 @@ public class CompanionChickenEntity extends EntityChicken
     private boolean wasSprinting = false;
     private boolean wasLowHealth = false;
     private boolean wasHungry = false;
+    private boolean greeted = false;
 
     private void speak(String text)
     {
@@ -148,6 +149,15 @@ public class CompanionChickenEntity extends EntityChicken
         }
     }
 
+    private void isGreeting(EntityPlayer player)
+    {
+        if (!greeted)
+        {
+            speak("Hi " + player.getName() + ", Boris here");
+            greeted = true;
+        }
+    }
+
     private void moveToPlayer()
     {
         EntityPlayer player = this.world.getClosestPlayerToEntity(this, 16.0D);
@@ -184,6 +194,7 @@ public class CompanionChickenEntity extends EntityChicken
 
         if (player != null)
         {
+            isGreeting(player);
             isPlayerHurt(player);
         }
 
