@@ -4,12 +4,16 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+import com.mojang.text2speech.Narrator;
 
 public class CompanionChickenEntity extends EntityChicken
 {
+    private int time = Dictionary.getRandomTime(10, 20);
+
     public CompanionChickenEntity(World world)
     {
         super(world);
+        this.setAlwaysRenderNameTag(true);
     }
 
     @Override
@@ -26,6 +30,13 @@ public class CompanionChickenEntity extends EntityChicken
         if (!this.world.isRemote)
         {
             moveToPlayer();
+
+            time--;
+            if (time <= 0)
+            {
+                randomCommunication();
+                time = Dictionary.getRandomTime(10, 20);
+            }
         }
     }
 
@@ -46,5 +57,13 @@ public class CompanionChickenEntity extends EntityChicken
                 this.getNavigator().clearPath();
             }
         }
+    }
+
+    public void randomCommunication()
+    {
+        String randomPhrase = Dictionary.getRandomPhrases();
+
+        this.setCustomNameTag(randomPhrase);
+        Narrator.getNarrator().say(randomPhrase);
     }
 }
