@@ -1,3 +1,21 @@
-# CompanionChicken
+<div align="center">
 
-Minecraft mod that adds a funny chicken that makes your survival experience much more fun
+![Title](Title.png)
+
+</div>
+
+# What is it?
+
+A simple Minecraft mod that adds a chicken companion named Boris to the game. He can follow the player, talk and even react vocally to various situations. You definitely won't be bored with him around
+
+# Quick Start
+
+1. Download and install *Minecraft Forge 1.12.2*
+2. Download the *.jar* file from the GitHub Releases
+3. Move the downloaded file into your *mods* folder alongside your other mods
+
+# Source Code
+
+To run the code in a development environment, the following was used:
+
+- Java 8 (Eclipse Temurin 8)
