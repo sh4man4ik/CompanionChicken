@@ -1,12 +1,14 @@
 <div align="center">
 
-![Title](Title.png)
+![Title](title.png)
 
 </div>
 
 # What is it?
 
 A simple Minecraft mod that adds a chicken companion named Boris to the game. He can follow the player, talk and even react vocally to various situations. You definitely won't be bored with him around
+
+<video src="https://github.com/user-attachments/assets/161b9a64-e476-4cc1-a0fd-2fc6885de6a2"></video>
 
 # Quick Start
 
